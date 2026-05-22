@@ -1,0 +1,15 @@
+:root {
+  /* 🌞 MODO CLARO */
+  --ion-background-color: #ffffff;
+  --ion-text-color: #000000;
+
+  --ion-card-background: #ffffff;
+}
+
+/* 🌙 MODO OSCURO */
+body.dark {
+  --ion-background-color: #121212;
+  --ion-text-color: #ffffff;
+
+  --ion-card-background: #1e1e1e;
+}

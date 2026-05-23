@@ -6,33 +6,43 @@
 
 <ion-content class="ion-padding">
 
-  <!-- INPUT BONITO -->
   <ion-card>
     <ion-card-content>
 
       <ion-item lines="none">
-        <ion-input [(ngModel)]="newTask" placeholder="Escribe una nueva tarea..."></ion-input>
-
-        <ion-button slot="end" (click)="addTask()">
-          Añadir
-        </ion-button>
-
+        <ion-input [(ngModel)]="newTask" placeholder="Tarea"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha</ion-label>
+        <ion-input type="date" [(ngModel)]="newDate"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Hora</ion-label>
+        <ion-input type="time" [(ngModel)]="newTime"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="addTask()">
+        Añadir tarea
+      </ion-button>
 
     </ion-card-content>
   </ion-card>
 
-  <!-- TEXTO BONITO -->
-  <ion-text color="medium">
-    <p>Hoy tienes tareas pendientes 👇</p>
-  </ion-text>
-
-  <!-- LISTA DINÁMICA (IMPORTANTE) -->
   <ion-list>
-    <ion-item *ngFor="let task of tasks">
+    <ion-item *ngFor="let task of tasks; let i = index">
+
       <ion-label>
-        {{ task }}
+        <h2 [style.text-decoration]="task.done ? 'line-through' : 'none'">
+          {{ task.title }}
+        </h2>
+        <p>{{ task.date }} - {{ task.time }}</p>
       </ion-label>
+
+      <ion-button (click)="toggleTask(i)">✔</ion-button>
+      <ion-button color="danger" (click)="deleteTask(i)">🗑</ion-button>
+
     </ion-item>
   </ion-list>
 

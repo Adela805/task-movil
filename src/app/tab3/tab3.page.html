@@ -6,48 +6,23 @@
 
 <ion-content class="ion-padding">
 
-  <!-- PERFIL -->
   <ion-card>
-    <ion-card-content style="text-align: center;">
-
-      <img
-        src="https://ionicframework.com/docs/img/demos/avatar.svg"
-        style="width: 80px; border-radius: 50%; margin-bottom: 10px;"
-      />
-
-      <h2>Mi App de Tareas</h2>
-      <p>Hecha con Ionic + Angular 🚀</p>
-
+    <ion-card-content style="text-align:center;">
+      <h2>Mi App de Tareas 🚀</h2>
     </ion-card-content>
   </ion-card>
 
-  <!-- AJUSTES -->
   <ion-list>
-   <ion-item>
-  <ion-label>🌙 Modo oscuro</ion-label>
-  <ion-toggle (ionChange)="toggleDarkMode($event)"></ion-toggle>
-   </ion-item>
 
     <ion-item>
-      <ion-label>🔔 Notificaciones</ion-label>
-      <ion-toggle></ion-toggle>
+      <ion-label>🌙 Modo oscuro</ion-label>
+      <ion-toggle (ionChange)="toggleDarkMode($event)"></ion-toggle>
     </ion-item>
 
-    <ion-item>
-      <ion-label>📊 Mostrar progreso</ion-label>
-      <ion-toggle checked="true"></ion-toggle>
-    </ion-item>
+    <ion-button expand="block" (click)="mostrarNotificacion()">
+      Activar notificación
+    </ion-button>
 
   </ion-list>
-
-  <!-- INFO EXTRA -->
-  <ion-card>
-    <ion-card-content>
-      <h3>💡 Tip</h3>
-      <p>
-        Completa tus tareas todos los días para ver tu progreso subir 🚀
-      </p>
-    </ion-card-content>
-  </ion-card>
 
 </ion-content>
